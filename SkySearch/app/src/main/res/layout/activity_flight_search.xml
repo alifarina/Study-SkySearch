@@ -6,4 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".FlightSearch">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Flights"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="29dp" />
+
+    <EditText
+        android:id="@+id/source"
+        android:layout_width="340dp"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Source"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <EditText
+        android:id="@+id/destination"
+        android:layout_width="337dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Destination"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+    <EditText
+        android:id="@+id/depDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="262dp" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="113dp"
+        android:layout_height="60dp"
+        android:text="SEARCH"
+        tools:layout_editor_absoluteX="225dp"
+        tools:layout_editor_absoluteY="346dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="238dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

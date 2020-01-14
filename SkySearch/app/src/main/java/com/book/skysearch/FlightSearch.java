@@ -22,6 +22,8 @@ public class FlightSearch extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flight_search);
+        //OkHttpClient client = new OkHttpClient();
+
     }
 
     /**
