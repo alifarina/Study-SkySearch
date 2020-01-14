@@ -16,7 +16,7 @@
         <activity android:name=".FlightSearch" />
         <activity
             android:name=".LoginSignupScreen"
-           
+
           />
         <activity android:name=".SplashScreen">
             <intent-filter>
