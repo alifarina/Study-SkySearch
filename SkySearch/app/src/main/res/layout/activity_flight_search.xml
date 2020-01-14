@@ -4,72 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical"
     tools:context=".FlightSearch">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Search Flights"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="29dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/source"
-        android:layout_width="340dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Source"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="84dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search Flights"
+                android:textSize="24sp"
+                android:textStyle="bold"
 
-    <EditText
-        android:id="@+id/destination"
-        android:layout_width="337dp"
-        android:layout_height="47dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Destination"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="156dp" />
+                />
 
-    <EditText
-        android:id="@+id/depDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="date"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="262dp" />
+            <EditText
+                android:id="@+id/source"
+                android:layout_width="340dp"
+                android:layout_height="53dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Source"
+                />
 
-    <Button
-        android:id="@+id/btnSearch"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="113dp"
-        android:layout_height="60dp"
-        android:text="SEARCH"
-        tools:layout_editor_absoluteX="225dp"
-        tools:layout_editor_absoluteY="346dp" />
-    <Button
-        android:id="@+id/btnPay"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="113dp"
-        android:layout_height="60dp"
-        android:onClick="goToPay"
-        android:text="Paytest"
-        tools:layout_editor_absoluteX="225dp"
-        tools:layout_editor_absoluteY="346dp" />
+            <EditText
+                android:id="@+id/destination"
+                android:layout_width="337dp"
+                android:layout_height="47dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Destination"
+                />
+            <Spinner
+                android:layout_width="match_parent"
+                android:id="@+id/spinn"
+                android:layout_height="40dp"/>
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                />
+            <EditText
+                android:id="@+id/depDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="date"
+                />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="238dp" />
+            <Button
+                android:id="@+id/btnSearch"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="113dp"
+                android:layout_height="60dp"
+                android:text="SEARCH" />
+
+            <Button
+                android:id="@+id/btnPay"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="113dp"
+                android:layout_height="60dp"
+                android:onClick="goToPay"
+                android:text="Paytest"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+
+
 
 </LinearLayout>

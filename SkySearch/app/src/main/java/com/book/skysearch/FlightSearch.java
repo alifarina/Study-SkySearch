@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -19,11 +20,23 @@ import models.AirportModel;
 
 public class FlightSearch extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    private EditText dateView;
+    private Spinner spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flight_search);
         //OkHttpClient client = new OkHttpClient();
+        spinner=findViewById(R.id.spinn);
+        makeDropDown(spinner);
+        dateView=findViewById(R.id.depDate);
+        dateView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setDatePicker(dateView);
+            }
+        });
 
     }
 
@@ -48,8 +61,9 @@ public class FlightSearch extends AppCompatActivity implements AdapterView.OnIte
 
     /**
      * function to add datePicker
+     * @param dateView
      */
-    private void setDatePicker() {
+    private void setDatePicker(final EditText dateView) {
         final Calendar c = Calendar.getInstance();
         int mYear = c.get(Calendar.YEAR);
         int mMonth = c.get(Calendar.MONTH);
@@ -72,7 +86,7 @@ public class FlightSearch extends AppCompatActivity implements AdapterView.OnIte
                             date = date + dayOfMonth;
                         }
                         //Todo : add edittext reference here
-//                        date_edt.setText(date);
+                        dateView.setText(date);
 //                        selectedDate = date;
                     }
                 }, mYear, mMonth, mDay);
