@@ -9,28 +9,43 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import javax.xml.transform.Source;
+
 import models.AirportModel;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class FlightSearch extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private EditText dateView;
     private Spinner spinner;
+    private TextView res;
+    private EditText src;
+    private Button btnSearch;
+    private String srcIn,url,key,headParam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_flight_search);
-        //OkHttpClient client = new OkHttpClient();
         spinner=findViewById(R.id.spinn);
         makeDropDown(spinner);
         dateView=findViewById(R.id.depDate);
+
         dateView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +53,56 @@ public class FlightSearch extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
+
+        res=findViewById(R.id.result);
+        src=findViewById(R.id.source);
+        btnSearch=findViewById(R.id.btnSearch);
+
+
+        //client
+        final OkHttpClient client= new OkHttpClient();
+
+
+
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                srcIn=src.getText().toString();
+                //getAirportList(client,srcIn,res);
+                url="https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/FR/EUR/en-GB/?query=";
+                key="f427fe1cb3msh666201577d0f4f9p16fc82jsn2987d1b3b0e3";
+                headParam="skyscanner-skyscanner-flight-search-v1.p.rapidapi.com";
+                url=url+srcIn;
+
+
+
+                Request request=new Request.Builder()
+                        .url(url)
+                        .get()
+                        .addHeader("x-rapidapi-host",headParam)
+                        .addHeader("x-rapidapi-key",key)
+                        .build();
+
+                try {
+                    Response response = client.newCall(request).execute();
+                    res.setText(response.body().string());
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
+
+
+    /**
+     * function to get airport List for dropdown suggestion
+     *
+     */
+    private void getAirportList(OkHttpClient client, String srcIn, final TextView res){
+
+    }
+
 
     /**
      * function to add dropdown

@@ -83,6 +83,12 @@
                 android:onClick="goToPay"
                 android:text="Paytest"
                 />
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="129dp"
+                android:text="res" />
         </LinearLayout>
     </ScrollView>
 
