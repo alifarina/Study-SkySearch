@@ -7,11 +7,12 @@
 
     android:orientation="vertical"
     tools:context=".FlightSearch">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="@color/sky_blue"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <ScrollView
@@ -20,69 +21,143 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:padding="20dp"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:padding="20dp">
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Search Flights"
+                android:textColor="@color/blue"
                 android:textSize="24sp"
                 android:textStyle="bold"
 
                 />
 
-            <EditText
-                android:id="@+id/source"
-                android:layout_width="340dp"
-                android:layout_height="53dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Source"
-                />
-
-            <EditText
-                android:id="@+id/destination"
-                android:layout_width="337dp"
-                android:layout_height="47dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Destination"
-                />
-            <Spinner
+            <RadioGroup
+                android:id="@+id/flight_way"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/one_way"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ONE WAY" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/round"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ROUND TRIP" />
+            </RadioGroup>
+
+            <com.book.skysearch.utilities.CustomEdittext
+                android:id="@+id/source"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hint="Source" />
+
+            <com.book.skysearch.utilities.CustomEdittext
+                android:id="@+id/destination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hint="Destination" />
+
+            <Spinner
                 android:id="@+id/spinn"
-                android:layout_height="40dp"/>
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tvLabel1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date"
-                />
-            <EditText
-                android:id="@+id/depDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="date"
-                />
+                android:text="Date of Travel" />
 
-            <Button
+            <RelativeLayout
+                android:id="@+id/depart_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.book.skysearch.utilities.CustomEdittext
+                    android:id="@+id/depDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hint="Departure*"
+
+                    />
+
+                <ImageView
+                    android:id="@+id/date_click"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:padding="5dp"
+                    android:src="@drawable/calender_date" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/retun_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tcLabel2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date of Return" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.book.skysearch.utilities.CustomEdittext
+                        android:id="@+id/returnDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hint="Return*"
+
+                        />
+
+                    <ImageView
+                        android:id="@+id/returndate_click"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        android:padding="5dp"
+                        android:src="@drawable/calender_date" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <com.book.skysearch.utilities.AppButton
                 android:id="@+id/btnSearch"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="113dp"
-                android:layout_height="60dp"
-                android:text="SEARCH" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:text="SEARCH" />
 
-            <Button
+            <com.book.skysearch.utilities.AppButton
                 android:id="@+id/btnPay"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="113dp"
-                android:layout_height="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:onClick="goToPay"
-                android:text="Paytest"
-                />
+                android:padding="10dp"
+                app:text="Paytest" />
 
             <TextView
                 android:id="@+id/result"
@@ -91,8 +166,6 @@
                 android:text="res" />
         </LinearLayout>
     </ScrollView>
-
-
 
 
 </LinearLayout>

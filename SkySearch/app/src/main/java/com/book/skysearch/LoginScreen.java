@@ -3,17 +3,13 @@ package com.book.skysearch;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class LoginSignupScreen extends AppCompatActivity {
+public class LoginScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +43,11 @@ public class LoginSignupScreen extends AppCompatActivity {
     }
 
     public void loginClick(View view) {
-        Intent goForward = new Intent(LoginSignupScreen.this, FlightSearch.class);
+        Intent goForward = new Intent(LoginScreen.this, FlightSearch.class);
         startActivity(goForward);
     }
     public void signUpClick(View v){
-        Intent goForward = new Intent(LoginSignupScreen.this, SignUpScreen.class);
+        Intent goForward = new Intent(LoginScreen.this, SignUpScreen.class);
         startActivity(goForward);
     }
 }
