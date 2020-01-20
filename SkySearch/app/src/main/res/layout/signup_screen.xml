@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:padding="20dp"
-            android:text="LOGIN"
+            android:text="SIGN UP"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
             android:textColor="@color/sky_blue" />
 
@@ -27,6 +27,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:hint="UserName*" />
+        <com.book.skysearch.utilities.CustomEdittext
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hint="Email Id*" />
 
         <com.book.skysearch.utilities.CustomEdittext
             android:id="@+id/password"
@@ -34,29 +39,18 @@
             android:layout_height="wrap_content"
             app:hint="Password*" />
 
+        <com.book.skysearch.utilities.CustomEdittext
+            android:id="@+id/confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hint="Confirm Password*" />
+
         <com.book.skysearch.utilities.AppButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:onClick="loginClick"
             android:padding="10dp"
-            app:text="Login" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="New member ?"
-            android:layout_marginTop="10dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/sky_blue" />
-
-        <com.book.skysearch.utilities.AppButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:onClick="signUpClick"
-            android:padding="10dp"
-            app:text="SIGN UP" />
+            app:text="GO" />
     </LinearLayout>
 </ScrollView>

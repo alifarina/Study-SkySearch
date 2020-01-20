@@ -19,8 +19,8 @@ public class LoginSignupScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
     }
 
@@ -46,8 +46,12 @@ public class LoginSignupScreen extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void login(View view) {
+    public void loginClick(View view) {
         Intent goForward = new Intent(LoginSignupScreen.this, FlightSearch.class);
+        startActivity(goForward);
+    }
+    public void signUpClick(View v){
+        Intent goForward = new Intent(LoginSignupScreen.this, SignUpScreen.class);
         startActivity(goForward);
     }
 }

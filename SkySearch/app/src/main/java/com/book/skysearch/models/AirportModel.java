@@ -1,4 +1,4 @@
-package models;
+package com.book.skysearch.models;
 
 public class AirportModel {
 

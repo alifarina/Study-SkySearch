@@ -1,7 +1,5 @@
 package com.book.skysearch;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -15,18 +13,18 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.book.skysearch.models.AirportModel;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import javax.xml.transform.Source;
-
-import models.AirportModel;
-import okhttp3.Call;
-import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
 
 public class FlightSearch extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
