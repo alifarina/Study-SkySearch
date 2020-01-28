@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Payment"
+    tools:context=".models.Payment"
     tools:showIn="@layout/activity_payment">
 
     <TextView
