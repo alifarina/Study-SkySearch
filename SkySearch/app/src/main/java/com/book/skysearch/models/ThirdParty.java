@@ -1,3 +1,4 @@
+
 package com.book.skysearch.models;
 
 
@@ -20,7 +21,7 @@ public class ThirdParty {
         for(int i=0;i<30;i++){
             TPresponse model = new TPresponse();
             model.setAirlineName(i);
-            model.setArrival_time("Airport "+i);
+            model.setArrival_time();
             routesList.add(model);
         }
         return routesList;
