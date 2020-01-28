@@ -33,6 +33,9 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 
+/**
+ * Activity screen to show user interface where user can enter search details
+ */
 public class FlightSearch extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
     private CustomEdittext dateView, returnDateView;
@@ -67,6 +70,10 @@ public class FlightSearch extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
+    /**
+     * created by Farina Ali
+     * button listeners
+     */
     private void createTextListeners() {
         source.addTextChangedListener(new TextWatcher() {
             @Override
@@ -269,8 +276,8 @@ public class FlightSearch extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void goToPay(View view) {
-        Intent main = new Intent(this, Payment.class);
-        startActivity(main);
+//        Intent main = new Intent(this, Payment.class);
+//        startActivity(main);
     }
 
     @Override

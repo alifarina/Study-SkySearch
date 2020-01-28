@@ -8,7 +8,10 @@ import android.widget.TextView;
 
 import com.book.skysearch.R;
 
-
+/**
+ * Created by Farina Ali
+ * utility class used in xml layout for showing blue buttons
+ */
 public class AppButton extends RelativeLayout {
     private String button_text;
 

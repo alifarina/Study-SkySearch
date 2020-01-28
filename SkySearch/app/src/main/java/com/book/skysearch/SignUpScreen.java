@@ -5,6 +5,9 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * xml and Activty created by Farina Ali
+ */
 public class SignUpScreen extends AppCompatActivity {
 
     @Override

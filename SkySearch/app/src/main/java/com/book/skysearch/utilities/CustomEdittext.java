@@ -11,7 +11,10 @@ import androidx.annotation.Nullable;
 import com.book.skysearch.R;
 import com.google.android.material.textfield.TextInputLayout;
 
-
+/**
+ * Created by Farina Ali
+ * used to show Edittext in xml layout
+ */
 public class CustomEdittext extends TextInputLayout {
     @Nullable
     @Override
